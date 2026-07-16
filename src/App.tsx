@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Linkedin, Sparkles, BrainCircuit, Rocket, Cpu, ShieldCheck, Workflow, ArrowRight } from 'lucide-react';
 import { Button } from './components/Button';
@@ -10,6 +11,8 @@ import { education } from './data/education';
 import { achievements, about, certifications, extracurriculars, profile } from './data/content';
 
 function App() {
+  const [photoSrc, setPhotoSrc] = useState(profile.photoUrl);
+
   const capabilities = [
     {
       title: 'AI systems',
@@ -55,11 +58,25 @@ function App() {
               <Sparkles size={16} />
               Available for impactful product and AI work
             </div>
-            <h1 className="mt-8 font-display text-4xl font-semibold leading-tight text-slate-950 dark:text-slate-50 sm:text-5xl lg:text-6xl">
-              {profile.name}
-            </h1>
-            <p className="mt-4 text-lg font-semibold text-slate-800 dark:text-slate-200">{profile.tagline}</p>
-            <p className="mt-6 max-w-xl text-xl text-slate-800 dark:text-slate-300">{profile.intro}</p>
+            <div className="mt-8 flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+              <div className="lg:max-w-xl">
+                <h1 className="font-display text-4xl font-semibold leading-tight text-slate-950 dark:text-slate-50 sm:text-5xl lg:text-6xl">
+                  {profile.name}
+                </h1>
+                <p className="mt-4 text-lg font-semibold text-slate-800 dark:text-slate-200">{profile.tagline}</p>
+                <p className="mt-6 max-w-xl text-xl text-slate-800 dark:text-slate-300">{profile.intro}</p>
+              </div>
+              <div className="relative mx-auto aspect-square w-44 overflow-hidden rounded-[32px] border border-slate-200 bg-slate-100 shadow-lg shadow-slate-200/40 dark:border-slate-700 dark:bg-slate-900/70 dark:shadow-black/20 lg:w-56">
+                <img
+                  src={photoSrc}
+                  alt={`${profile.name} profile`}
+                  onError={() => {
+                    if (photoSrc !== '/profile.svg') setPhotoSrc('/profile.svg');
+                  }}
+                  className="h-full w-full object-cover"
+                />
+              </div>
+            </div>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button href="#projects">View Projects</Button>
               <a

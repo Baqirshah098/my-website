@@ -1,0 +1,19 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#10b981" />
+    </linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.9)" />
+      <stop offset="100%" stop-color="rgba(255,255,255,0)" />
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="80" fill="url(#bg)" />
+  <circle cx="256" cy="176" r="96" fill="#f8fafc" />
+  <path d="M128 432C128 345.178 199.178 274 286 274H226C312.822 274 384 345.178 384 432V472H128V432Z" fill="#f8fafc" />
+  <path d="M256 96C169.178 96 96 169.178 96 256V328C96 381.332 138.668 424 192 424H320C373.332 424 416 381.332 416 328V256C416 169.178 342.822 96 256 96Z" fill="white" opacity="0.12" />
+  <circle cx="360" cy="120" r="24" fill="rgba(255,255,255,0.8)" />
+  <circle cx="120" cy="128" r="16" fill="rgba(255,255,255,0.7)" />
+  <ellipse cx="256" cy="104" rx="82" ry="16" fill="url(#glow)" opacity="0.8" />
+</svg>

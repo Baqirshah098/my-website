@@ -7,6 +7,7 @@ export const profile = {
   location: 'Shikarpur, Pakistan',
   linkedin: 'https://linkedin.com/in/syed-mohammad-baqir-shah-a4ab1b335',
   resumeUrl: '/Syed_Mohammad_Baqir_Shah_Resume.pdf',
+  photoUrl: '/profile.jpg',
 };
 
 export const achievements = [
